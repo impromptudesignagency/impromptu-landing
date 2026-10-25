@@ -199,6 +199,19 @@ img { max-width: 100%; display: block; }
 .contact .btn-ghost:hover { background: var(--alabaster); color: var(--charcoal); }
 .contact-phone { margin-top: 1.6rem; color: var(--gray); }
 
+/* ---------- page hero & project pages ---------- */
+.page-hero { padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2rem, 4vw, 3rem); background: var(--white); }
+.page-hero .section-title { margin-bottom: 1.2rem; }
+.crumb { color: var(--crimson); text-decoration: none; font-weight: 600; }
+.crumb:hover { text-decoration: underline; }
+.project-desc { max-width: 720px; color: #4a4445; font-size: 1.05rem; }
+.project-gallery { background: var(--white); padding-top: 1rem; }
+.gallery { columns: 3 300px; column-gap: 1.4rem; }
+.gallery-item { break-inside: avoid; margin-bottom: 1.4rem; border-radius: 8px; overflow: hidden; background: var(--alabaster); }
+.gallery-item img { width: 100%; height: auto; transition: transform .45s ease; }
+.gallery-item:hover img { transform: scale(1.03); }
+@media (max-width: 640px) { .gallery { columns: 1; } }
+
 /* ---------- footer ---------- */
 .site-footer { background: var(--charcoal); border-top: 1px solid rgba(244,244,244,.1); padding: 3rem 0; color: var(--alabaster); }
 .footer-inner { text-align: center; }
