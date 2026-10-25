@@ -34,4 +34,22 @@
   // Current year
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
+
+  // Hamburger menu (mobile)
+  var hb = document.getElementById("hamburger");
+  var menu = document.getElementById("navMenu");
+  if (hb && menu) {
+    hb.addEventListener("click", function () {
+      var open = menu.classList.toggle("open");
+      hb.classList.toggle("open", open);
+      hb.setAttribute("aria-expanded", String(open));
+    });
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        menu.classList.remove("open");
+        hb.classList.remove("open");
+        hb.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 })();
