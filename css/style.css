@@ -206,9 +206,11 @@ img { max-width: 100%; display: block; }
 .footer-inner p { color: var(--gray); font-size: .9rem; }
 .fine { margin-top: .4rem; font-size: .8rem !important; opacity: .7; }
 
-/* ---------- reveal animation (subtle) ---------- */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ---------- reveal animation (subtle, fail-safe) ---------- */
+/* Default: everything visible. Only when JS is running do we hide .reveal */
+/* and progressively show it; a safety timeout in JS reveals all as backup. */
+html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+html.js .reveal.visible { opacity: 1; transform: none; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1020px) {
